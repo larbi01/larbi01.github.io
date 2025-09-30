@@ -71,18 +71,45 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
     e.preventDefault();
     
     // Get form data
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        subject: document.getElementById('subject').value,
-        message: document.getElementById('message').value
-    };
+    const form = this;
+    const formData = new FormData(form);
     
-    // Show success message (in a real application, you would send this to a server)
-    showNotification('Thank you for your message! I will get back to you soon.', 'success');
+    // Check if Formspree form ID is set
+    const formAction = form.getAttribute('action');
+    if (formAction.includes('mblzozor')) {
+        showNotification('Please set up Formspree to receive messages. See README for instructions.', 'error');
+        return;
+    }
     
-    // Reset form
-    this.reset();
+    // Show loading state
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+    
+    // Send form data
+    fetch(formAction, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            showNotification('Thank you for your message! I will get back to you soon.', 'success');
+            form.reset();
+        } else {
+            throw new Error('Form submission failed');
+        }
+    })
+    .catch(error => {
+        showNotification('Sorry, there was a problem sending your message. Please try again.', 'error');
+    })
+    .finally(() => {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    });
 });
 
 // Notification system
