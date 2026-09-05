@@ -1,451 +1,430 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Larbi OUADEIH - Networks & Systems Portfolio</title>
-    
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>larbi$ ~ resume — Larbi OUADEIH</title>
+<!-- Geist Mono (x.ai CDN substitute, full monospace identity) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============ TOKENS — Vulcanico notturno ============ */
+:root{
+  --bg:#001621;            /* near-black, deep blue undertone */
+  --bg-2:#00222f;          /* elevated surface */
+  --bg-3:#00303d;          /* hover surface */
+  --accent:#FF4103;        /* ember orange */
+  --accent-dim:#ff41034d;  /* ember @30% for glows */
+  --text:#e8f1f5;          /* bone-white, cool */
+  --text-2:#9fb3bd;        /* secondary */
+  --text-3:#5a707a;        /* muted */
+  --line:rgba(232,241,245,.12);
+  --line-2:rgba(232,241,245,.22);
+  --mono:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono','Courier New',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:var(--mono);
+  font-size:15px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  /* faint scanline / ember glow atmosphere */
+  background-image:
+    radial-gradient(1200px 500px at 70% -80px, var(--accent-dim), transparent 60%),
+    radial-gradient(900px 400px at 10% 20%, #0a2a36 0, transparent 60%);
+  background-attachment:fixed;
+}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent}
+a:hover{color:#ff7a4d;border-bottom-color:var(--accent-dim)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+/* ============ NAV ============ */
+nav{position:sticky;top:0;z-index:50;background:rgba(0,22,33,.86);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-brand{font-weight:600;color:var(--text);letter-spacing:.5px}
+.nav-brand .prompt{color:var(--accent)}
+.nav-links{display:flex;gap:22px;list-style:none}
+.nav-links a{color:var(--text-2);font-size:12.5px;letter-spacing:1px;text-transform:uppercase}
+.nav-links a:hover{color:var(--text)}
+.nav-burger{display:none;background:none;border:1px solid var(--line-2);color:var(--accent);font-family:var(--mono);font-size:13px;padding:4px 10px;cursor:pointer}
+.nav-links.open{display:flex;flex-direction:column;position:absolute;top:56px;left:0;right:0;background:var(--bg-2);border-bottom:1px solid var(--line);padding:16px 24px;gap:14px}
+
+/* ============ TERMINAL FRAME ============ */
+.term{background:var(--bg-2);border:1px solid var(--line);box-shadow:0 0 0 1px rgba(0,22,33,.6),0 24px 60px -30px rgba(0,0,0,.9)}
+.term-bar{display:flex;align-items:center;gap:8px;height:40px;padding:0 14px;border-bottom:1px solid var(--line);background:#00131d}
+.dot{width:10px;height:10px;border-radius:50%;flex:none}
+.dot-1{background:#ff5f56}.dot-2{background:#ffbd2e}.dot-3{background:#27c93f}
+.term-title{margin-left:8px;color:var(--text-3);font-size:11.5px;letter-spacing:1px;flex:1}
+
+/* ============ HERO / BOOT SEQUENCE ============ */
+.hero{padding:64px 0 72px}
+.boot{min-height:300px;padding:26px 26px 30px;font-size:13.5px}
+.boot .ln{white-space:pre-wrap;word-break:break-word}
+.boot .c{color:var(--text-3)}       /* comment / dim */
+.boot .k{color:var(--accent)}       /* keyword */
+.boot .g{color:#39ff83}             /* ok / green reply */
+.boot .y{color:#ffd23f}             /* warn */
+.boot .w{color:var(--text)}         /* bright output */
+.boot .cursor{display:inline-block;width:9px;height:16px;background:var(--accent);vertical-align:-2px;animation:blink 1.05s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero h1{margin-top:36px;font-size:clamp(26px,5vw,44px);font-weight:600;color:var(--text);line-height:1.1;letter-spacing:.5px}
+.hero h1 .acc{color:var(--accent)}
+.hero .role{margin-top:14px;font-size:clamp(13px,2.4vw,16px);color:var(--text-2);max-width:640px}
+.hero .meta{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px}
+.pill{border:1px solid var(--line-2);padding:5px 12px;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--text-2)}
+.pill.acc{border-color:var(--accent);color:var(--accent)}
+.hero .cta{margin-top:34px;display:flex;flex-wrap:wrap;gap:14px}
+.btn{display:inline-block;border:1px solid var(--line-2);padding:11px 22px;font-family:var(--mono);font-size:12.5px;letter-spacing:1.4px;text-transform:uppercase;cursor:pointer;transition:background .15s,color .15s}
+.btn-solid{background:var(--accent);border-color:var(--accent);color:#0a0a0a;font-weight:600}
+.btn-solid:hover{background:#ff5c22;border-color:#ff5c22;color:#000}
+.btn-ghost{background:transparent;color:var(--text)}
+.btn-ghost:hover{background:var(--bg-3);color:var(--text)}
+
+/* ============ SECTIONS ============ */
+section{padding:64px 0;border-top:1px solid var(--line)}
+.s-head{display:flex;align-items:center;gap:14px;margin-bottom:30px}
+.s-head .hash{color:var(--accent)}
+.s-head h2{font-size:20px;font-weight:600;letter-spacing:1px}
+.s-head .divider{flex:1;height:1px;background:var(--line)}
+.s-head .count{color:var(--text-3);font-size:12px}
+
+/* ============ ABOUT + EDUCATION ============ */
+.about-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:26px}
+.card{background:rgba(232,241,245,.03);border:1px solid var(--line);padding:22px}
+.card h3{font-size:14px;letter-spacing:1px;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.card p{color:var(--text-2);font-size:14px}
+.card .row{display:flex;gap:10px;margin-bottom:12px;font-size:13px}
+.card .row .k{color:var(--text-3);flex:none;width:86px}
+.card .row .v{color:var(--text)}
+.card .row .d{color:var(--accent)}
+.langs{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+
+/* ============ SKILLS ============ */
+.viewbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;gap:16px;flex-wrap:wrap}
+.viewtab{display:flex;border:1px solid var(--line-2)}
+.viewtab button{background:none;border:none;border-right:1px solid var(--line-2);color:var(--text-2);font-family:var(--mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:7px 16px;cursor:pointer}
+.viewtab button:last-child{border-right:none}
+.viewtab button.on{background:var(--accent);color:#0a0a0a;font-weight:600}
+.skills{display:grid;gap:18px}
+.skills.list{grid-template-columns:1fr}
+.skills.grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.skill-group{border:1px solid var(--line);background:rgba(232,241,245,.02)}
+.skill-group .glabel{display:flex;align-items:center;gap:10px;padding:11px 16px;border-bottom:1px solid var(--line);font-size:12.5px;letter-spacing:1px;text-transform:uppercase;color:var(--text)}
+.skill-group .glabel .num{color:var(--accent);font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:13px 16px}
+.chip{border:1px solid var(--line-2);padding:4px 10px;font-size:11.5px;color:var(--text-2);transition:border-color .15s,color .15s}
+.chip:hover{border-color:var(--accent);color:var(--accent)}
+/* list detail view: each skill becomes a row with description */
+.skil-row{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start;width:100%;padding:10px 16px;border-bottom:1px solid var(--line)}
+.skil-row:last-child{border-bottom:none}
+.skil-row .nm{color:var(--accent);font-weight:600;width:200px;flex:none}
+.skil-row .ds{color:var(--text-2);font-size:12.5px;flex:1;min-width:200px}
+.skill-group.hidden{display:none}
+
+/* ============ PROJECTS ============ */
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.proj{border:1px solid var(--line);background:rgba(232,241,245,.03);display:flex;flex-direction:column;transition:border-color .15s,transform .15s}
+.proj:hover{border-color:var(--accent);transform:translateY(-3px)}
+.proj .pbar{display:flex;align-items:center;gap:8px;padding:9px 14px;border-bottom:1px solid var(--line);color:var(--text-3);font-size:11px;letter-spacing:1px;text-transform:uppercase}
+.proj .pbar .bar{color:var(--accent)}
+.proj .pbody{padding:18px;display:flex;flex-direction:column;flex:1}
+.proj h3{font-size:15px;color:var(--text);margin-bottom:10px}
+.proj h3 .k{color:var(--accent)}
+.proj p{color:var(--text-2);font-size:13px;flex:1}
+.proj .tags{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0}
+.proj .tags span{border:1px solid var(--line-2);font-size:10.5px;letter-spacing:.5px;padding:2px 8px;color:var(--text-2)}
+.proj .plink{font-size:12px;color:var(--accent)}
+
+/* ============ CERTS ============ */
+.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.cert{display:flex;gap:14px;align-items:flex-start;border:1px solid var(--line);background:rgba(232,241,245,.02);padding:16px}
+.cert .st{color:var(--accent);font-weight:600;flex:none;margin-top:1px}
+.cert .t{color:var(--text);font-size:13.5px}
+.cert .o{color:var(--text-3);font-size:12px}
+.cert .s{display:inline-block;margin-top:6px;font-size:10px;letter-spacing:1px;text-transform:uppercase;border:1px solid currentColor;padding:2px 7px}
+.cert .s.done{color:#39ff83}
+.cert .s.busy{color:var(--accent);border-style:dashed}
+
+/* ============ CONTACT ============ */
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.ci{border:1px solid var(--line);background:rgba(232,241,245,.02);padding:18px}
+.ci .lab{color:var(--text-3);font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.ci .val{font-size:14px;word-break:break-all}
+.ci .val a{color:var(--text)}
+.ci .val a:hover{color:var(--accent)}
+
+/* ============ FOOTER ============ */
+footer{border-top:1px solid var(--line);padding:34px 0 46px;color:var(--text-3);font-size:12px}
+footer .status{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+footer .led{width:8px;height:8px;border-radius:50%;background:#39ff83;box-shadow:0 0 8px #39ff83;animation:blink 2.4s ease infinite}
+footer .line{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:760px){
+  .nav-links{display:none}
+  .nav-burger{display:inline-block}
+  .about-grid{grid-template-columns:1fr}
+  .hero{padding:44px 0}
+  section{padding:44px 0}
+  .skills.grid{grid-template-columns:1fr}
+}
+@media(max-width:430px){
+  body{font-size:14px}
+  .boot{font-size:12px;padding:18px}
+  .s-head h2{font-size:17px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <h2>Larbi OUADEIH</h2>
-            </div>
-            <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item">
-                    <a href="#about" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#skills" class="nav-link">Skills</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#projects" class="nav-link">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#certifications" class="nav-link">Certifications</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
-                </li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-background">
-            <img src="resources/hero-bg.jpg" alt="Network Infrastructure Background">
-        </div>
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">Larbi OUADEIH</h1>
-                <h2 class="hero-subtitle">Master Student in Networks & Systems</h2>
-                <p class="hero-description">
-                    Aspiring Cybersecurity & Network Analyst with hands-on experience in network infrastructure, 
-                    system administration, and security. Currently pursuing advanced studies in Networks & Systems 
-                    with specialization in Edge Computing, IoT, and Cybersecurity.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Projects</a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ================= NAV ================= -->
+<nav>
+  <div class="nav-in wrap">
+    <div class="nav-brand"><span class="prompt">larbi$</span> ~/resume</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">./about</a></li>
+      <li><a href="#skills">./skills</a></li>
+      <li><a href="#projects">./projects</a></li>
+      <li><a href="#certs">./certs</a></li>
+      <li><a href="#contact">./contact</a></li>
+    </ul>
+    <button class="nav-burger" id="navBurger" aria-label="menu">MENU</button>
+  </div>
+</nav>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        I am a dedicated Master student in Networks & Systems at Université Paris Cité, specializing 
-                        in system administration, cybersecurity, and network infrastructures. With practical experience 
-                        at CMA CGM as an IT Project & Support Officer, I've developed strong skills in network 
-                        troubleshooting, system configuration, and IT infrastructure management.
-                    </p>
-                    <p>
-                        My technical expertise spans network protocols, Linux administration, Python automation, 
-                        and cybersecurity practices. I'm passionate about building robust, secure network solutions 
-                        and continuously expanding my knowledge in emerging technologies.
-                    </p>
-                    <p>
-                        Currently seeking a final year internship to apply my skills in real-world scenarios and 
-                        contribute to innovative network and security projects.
-                    </p>
-                </div>
-                <div class="about-education">
-                    <h3>Education</h3>
-                    <div class="education-item">
-                        <h4>Master Réseaux et Systèmes Autonomes (RSA)</h4>
-                        <p class="school">Université Paris Cité</p>
-                        <p class="details">Edge, IoT, VANET, UAV (drones), Sécurité</p>
-                    </div>
-                    <div class="education-item">
-                        <h4>Licence Informatique</h4>
-                        <p class="school">Université Aix-Marseille</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ================= HERO / BOOT ================= -->
+<header class="hero wrap" id="top">
+  <div class="term">
+    <div class="term-bar">
+      <span class="dot dot-1"></span><span class="dot dot-2"></span><span class="dot dot-3"></span>
+      <span class="term-title">larbi@vulcanico: ~/whoami</span>
+    </div>
+    <div class="boot" id="boot" aria-label="terminal startup sequence"></div>
+  </div>
 
-    <!-- Skills Section -->
-    <section class="skills" id="skills">
-        <div class="container">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <div class="skill-icon">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <h3>Cybersecurity</h3>
-                    <ul class="skill-list">
-                        <li>OWASP Top 10, DAST/SAST (OWASP ZAP, Nikto, Wapiti)</li>
-                        <li>Basic penetration testing, log analysis, OSINT</li>
-                        <li>Securing Linux & Windows environments (hardening, access control, security policies)</li>
-                        <li>Monitoring and incident detection (Wireshark, tcpdump, NetProbe)</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-icon">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
-                    <h3>Networking & Protocols</h3>
-                    <ul class="skill-list">
-                        <li>TCP/IP, DNS, DHCP</li>
-                        <li>VLAN, VPN Configuration</li>
-                        <li>Routing & Switching (Cisco)</li>
-                        <li>NAT, Network Monitoring</li>
-                        <li>Wireshark Analysis</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <div class="skill-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Programming & Automation</h3>
-                    <ul class="skill-list">
-                        <li>Python (Network Automation)</li>
-                        <li>C++ Development</li>
-                        <li>Git/GitHub Version Control</li>
-                        <li>CI/CD (GitHub Actions)</li>
-                        <li>SQL Databases</li>
-                        <li>Shell Scripting</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <div class="skill-icon">
-                        <i class="fas fa-server"></i>
-                    </div>
-                    <h3>Systems & Administration</h3>
-                    <ul class="skill-list">
-                        <li>Linux (KaliLinux, Ubuntu)</li>
-                        <li>Windows Server Management</li>
-                        <li>Active Directory</li>
-                        <li>Bash Scripting</li>
-                        <li>System Security Hardening</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <div class="skill-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <h3>Tools & Environments</h3>
-                    <ul class="skill-list">
-                        <li>Cisco Packet Tracer</li>
-                        <li>Wireshark Network Analysis</li>
-                        <li>Docker Containerization</li>
-                        <li>WSL (Windows Subsystem for Linux)</li>
-                        <li>Virtualization Technologies</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+  <h1>LARBI <span class="acc">OUADEIH</span></h1>
+  <p class="role">Master's graduate — <b>Networks &amp; Autonomous Systems (RSA)</b>, Université Paris Cité.<br>
+     Edge Computing · IoT · VANET · UAV/drones · Cybersecurity. Open to CDI opportunities.</p>
+  <div class="meta">
+    <span class="pill acc">TRILINGUAL · FR / AR / EN</span>
+    <span class="pill">EDGE COMPUTING</span>
+    <span class="pill">CYBERSECURITY</span>
+    <span class="pill">NETWORKS</span>
+  </div>
+  <div class="cta">
+    <a class="btn btn-solid" href="#contact">HIRE_ME</a>
+    <a class="btn btn-ghost" href="https://github.com/larbi01" target="_blank" rel="noopener">VIEW_GITHUB</a>
+  </div>
+</header>
 
-    <!-- Projects Section -->
-    <section class="projects" id="projects">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card featured">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-search-network"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Secure File Transfer & Integrity Verification (SFTIV)</h3>
-                        <p class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">WSL</span>
-                            <span class="tech-tag">AES-256-GCM</span>
-                            <span class="tech-tag">SHA-256</span>
-                            <span class="tech-tag">Ed25519</span>
-                        </p>
-                        <p class="project-description">
-                           Developed a Python-based cybersecurity tool that ensures secure, verifiable file transmission by combining AES encryption, SHA-256 integrity validation, and Ed25519 digital signatures.
-                           The project demonstrates practical implementation of the Confidentiality, Integrity, and Authenticity (CIA) principles in data exchange.
-                        </p>
-                        <div class="project-features">
-                            <h4>Key Features:</h4>
-                            <ul>
-                                <li>AES-256-GCM file encryption for strong confidentiality</li>
-                                <li>SHA-256 manifest generation and verification for data integrity</li>
-                                <li>Ed25519 digital signatures to confirm file authenticity</li>
-                                <li>Lightweight TCP client/server model for local or network transfers</li>
-                            </ul>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/larbi01/sftiv" target="_blank" class="btn btn-outline">
-                                <i class="fab fa-github"></i> View on GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!-- ================= ABOUT + EDUCATION ================= -->
+<section id="about">
+  <div class="wrap">
+    <div class="s-head">
+      <span class="hash">##</span>
+      <h2>ABOUT</h2><span class="divider"></span><span class="count">whoami.txt</span>
+    </div>
+    <div class="about-grid">
+      <div class="card">
+        <h3># profile</h3>
+        <p>Networks &amp; Autonomous Systems engineer. I build and harden
+        the connected fabric the world runs on — from <span class="k">TCP/IP</span> to
+        <span class="k">UAV</span> swarms and <span class="k">edge</span> deployments.
+        Former IT Project &amp; Support Officer at <b>CMA CGM</b>, where I shipped
+        infrastructure and solved problems at production speed.</p>
+        <div class="langs">
+          <span class="chip" style="color:#39ff83">FR</span>
+          <span class="chip" style="color:#ffd23f">AR</span>
+          <span class="chip" style="color:#ff8a5c">EN</span>
         </div>
-        <div class="container">
-            <h2 class="section-title"> </h2>
-            <div class="projects-grid">
-                <div class="project-card featured">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-search-network"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>NetProbe - Network Diagnostic & Monitoring Tool</h3>
-                        <p class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Linux</span>
-                            <span class="tech-tag">WSL</span>
-                            <span class="tech-tag">Network Monitoring</span>
-                        </p>
-                        <p class="project-description">
-                            Developed a comprehensive Python-based network diagnostic tool that integrates ping functionality, 
-                            DNS resolution, and TCP/IP connectivity tests. The tool provides real-time network monitoring 
-                            capabilities and automated diagnostic reports for network troubleshooting.
-                        </p>
-                        <div class="project-features">
-                            <h4>Key Features:</h4>
-                            <ul>
-                                <li>Automated network ping testing</li>
-                                <li>DNS resolution verification</li>
-                                <li>TCP/IP connectivity analysis</li>
-                                <li>Real-time monitoring dashboard</li>
-                                <li>Comprehensive diagnostic reports</li>
-                            </ul>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/larbi01/netprobe" target="_blank" class="btn btn-outline">
-                                <i class="fab fa-github"></i> View on GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+      </div>
+      <div class="card">
+        <h3>// education</h3>
+        <div class="row"><span class="k">NOW</span><span class="v">Master RSA · <span class="d">Université Paris Cité</span><br><span class="c" style="color:var(--text-3);font-size:12px">Networks &amp; Autonomous Systems — Edge · IoT · VANET · UAV</span></span></div>
+        <div class="row"><span class="k">PREV</span><span class="v">Licence Informatique · <span class="d">Aix-Marseille Université</span></span></div>
+        <div class="row"><span class="k">WORK</span><span class="v">IT Project &amp; Support Officer · <span class="d">CMA CGM</span><br><span class="c" style="color:var(--text-3);font-size:12px">production infrastructure &amp; support</span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Certifications Section -->
-    <section class="certifications" id="certifications">
-        <div class="container">
-            <h2 class="section-title">Certifications</h2>
-            <div class="certifications-grid">
-                <div class="certification-card">
-                    <div class="cert-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>ISC² Certified in Cybersecurity</h3>
-                    <p class="cert-status in-progress">In Progress</p>
-                    <p class="cert-description">Comprehensive cybersecurity certification covering security principles, risk management, and incident response.</p>
-                </div>
-                
-                <div class="certification-card">
-                    <div class="cert-icon">
-                        <i class="fab fa-python"></i>
-                    </div>
-                    <h3>Python for Everybody</h3>
-                    <p class="cert-status completed">Completed</p>
-                    <p class="cert-org">University of Michigan (Coursera)</p>
-                    <p class="cert-description">Comprehensive Python programming course covering data structures, web services, and databases.</p>
-                </div>
-                
-                <div class="certification-card">
-                    <div class="cert-icon">
-                        <i class="fab fa-microsoft"></i>
-                    </div>
-                    <h3>Microsoft Security Essentials</h3>
-                    <p class="cert-status completed">Completed</p>
-                    <p class="cert-org">LinkedIn Learning</p>
-                    <p class="cert-description">Concepts, Solutions & AI-Powered Protection strategies for modern cybersecurity challenges.</p>
-                </div>
-                
-                <div class="certification-card">
-                    <div class="cert-icon">
-                        <i class="fab fa-ubuntu"></i>
-                    </div>
-                    <h3>Ubuntu Linux Professional Certificate</h3>
-                    <p class="cert-status completed">Completed</p>
-                    <p class="cert-org">Canonical</p>
-                    <p class="cert-description">Professional certification in Ubuntu Linux system administration and management.</p>
-                </div>
-                
-                <div class="certification-card">
-                    <div class="cert-icon">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <h3>OSINT Certification</h3>
-                    <p class="cert-status in-progress">In Progress</p>
-                    <p class="cert-org">Cybrary</p>
-                    <p class="cert-description">Open Source Intelligence gathering techniques and methodologies for cybersecurity investigations.</p>
-                </div>
-                
-                <div class="certification-card">
-                    <div class="cert-icon">
-                        <i class="fas fa-diagram-project"></i>
-                    </div>
-                    <h3>UML Certification</h3>
-                    <p class="cert-status completed">Completed</p>
-                    <p class="cert-org">The Hong Kong University (Coursera)</p>
-                    <p class="cert-description">Unified Modeling Language for software design and system architecture documentation.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ================= SKILLS ================= -->
+<section id="skills">
+  <div class="wrap">
+    <div class="s-head">
+      <span class="hash">##</span>
+      <h2>SKILLS</h2><span class="divider"></span><span class="count">ls ./skills --detail</span>
+    </div>
+    <div class="viewbar">
+      <span style="color:var(--text-3);font-size:12px">05 GROUPS · toggle verbosity</span>
+      <div class="viewtab" id="viewTab" role="group" aria-label="skill view toggle">
+        <button class="on" data-view="grid">GRID</button>
+        <button data-view="list">LIST -d</button>
+      </div>
+    </div>
+    <div class="skills grid" id="skillsBox">
+      <div class="skill-group" data-g="Cybersecurity">
+        <div class="glabel"><span class="num">[01]</span> Cybersecurity</div>
+        <div class="chips"><span class="chip">OWASP Top 10</span><span class="chip">ZAP / Nikto / Wapiti</span><span class="chip">Pentesting basics</span><span class="chip">Log analysis</span><span class="chip">OSINT</span><span class="chip">Linux+Windows hardening</span><span class="chip">Wireshark / tcpdump</span></div>
+      </div>
+      <div class="skill-group" data-g="Networking">
+        <div class="glabel"><span class="num">[02]</span> Networking</div>
+        <div class="chips"><span class="chip">TCP/IP</span><span class="chip">DNS</span><span class="chip">DHCP</span><span class="chip">VLAN</span><span class="chip">VPN</span><span class="chip">Cisco routing/switching</span><span class="chip">NAT</span><span class="chip">monitoring</span></div>
+      </div>
+      <div class="skill-group" data-g="Programming">
+        <div class="glabel"><span class="num">[03]</span> Programming</div>
+        <div class="chips"><span class="chip">Python (network automation)</span><span class="chip">C++</span><span class="chip">Git / GitHub</span><span class="chip">GitHub Actions CI/CD</span><span class="chip">SQL</span><span class="chip">shell</span></div>
+      </div>
+      <div class="skill-group" data-g="Systems">
+        <div class="glabel"><span class="num">[04]</span> Systems</div>
+        <div class="chips"><span class="chip">Linux Kali / Ubuntu</span><span class="chip">Windows Server</span><span class="chip">Active Directory</span><span class="chip">bash</span><span class="chip">hardening</span></div>
+      </div>
+      <div class="skill-group" data-g="Tools">
+        <div class="glabel"><span class="num">[05]</span> Tools</div>
+        <div class="chips"><span class="chip">Packet Tracer</span><span class="chip">Wireshark</span><span class="chip">Docker</span><span class="chip">WSL</span><span class="chip">virtualization</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Video Introduction Section 
-    <section class="video-intro" id="video-intro">
-        <div class="container">
-            <h2 class="section-title">Video Introduction</h2>
-            <div class="video-container">
-                <div class="video-placeholder">
-                    <i class="fas fa-video"></i>
-                    <h3>Personal Video Introduction</h3>
-                    <p>This section is reserved for a personal video introduction.</p>
-                    <div class="video-instructions">
-                        <h4>To embed your video:</h4>
-                        <ul>
-                            <li><strong>YouTube:</strong> Upload your video to YouTube and embed the iframe code here</li>
-                            <li><strong>MP4:</strong> Replace this placeholder with a video player element</li>
-                            <li><strong>Recommended:</strong> 2-3 minute professional introduction highlighting your skills and experience</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+<!-- ================= PROJECTS ================= -->
+<section id="projects">
+  <div class="wrap">
+    <div class="s-head">
+      <span class="hash">##</span>
+      <h2>PROJECTS</h2><span class="divider"></span><span class="count">PROJECTS =</span>
+    </div>
+    <div class="projects">
+      <article class="proj">
+        <div class="pbar"><span class="bar">$</span> sftiv/</div>
+        <div class="pbody">
+          <h3>SFTIV <span class="k">— secure file transfer</span></h3>
+          <p>End-to-end encrypted file transfer over TCP. AES-256-GCM for confidentiality,
+             SHA-256 integrity checks, Ed25519 signatures for authenticity. A client/server
+             pair built with clean sockets.</p>
+          <div class="tags"><span>AES-256-GCM</span><span>SHA-256</span><span>Ed25519</span><span>TCP</span></div>
+          <a class="plink" href="https://github.com/larbi01/sftiv" target="_blank" rel="noopener">github.com/larbi01/sftiv &rarr;</a>
         </div>
-    </section> -->
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Email</h3>
-                            <a href="mailto:larbi.ouadeih@etu.u-paris.fr">larbi.ouadeih@etu.u-paris.fr</a>
-                        </div>
-                    </div>
-                    <!-- 
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Phone</h3>
-                            <a href="tel:+33749">07 ** ** ** **</a>
-                        </div>
-                    </div> -->
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-linkedin"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>LinkedIn</h3>
-                            <a href="https://linkedin.com/in/larbi-ouadeih" target="_blank">linkedin.com/in/larbi-ouadeih</a>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-github"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>GitHub</h3>
-                            <a href="https://github.com/larbi01" target="_blank">github.com/larbi01</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="contact-form">
-                    <h3>Send me a message</h3>
-                    <form id="contact-form" action="https://formspree.io/f/mblzozor" method="POST">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                </div>
-            </div>
+      </article>
+      <article class="proj">
+        <div class="pbar"><span class="bar">$</span> netprobe/</div>
+        <div class="pbody">
+          <h3>NetProbe <span class="k">— network diagnostics</span></h3>
+          <p>Network diagnostic and monitoring toolkit. Runs ping / DNS / TCP reachability
+             tests from a single entry point and emits structured reports for ops teams.</p>
+          <div class="tags"><span>ping</span><span>DNS</span><span>TCP</span><span>reports</span></div>
+          <a class="plink" href="https://github.com/larbi01/netprobe" target="_blank" rel="noopener">github.com/larbi01/netprobe &rarr;</a>
         </div>
-    </section>
+      </article>
+    </div>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-text">
-                    <p>&copy; 2025 Larbi OUADEIH. All rights reserved.</p>
-                </div>
-                <div class="footer-social">
-                    <a href="https://linkedin.com/in/larbi-ouadeih" target="_blank">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/larbi01/netprobe" target="_blank">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
+<!-- ================= CERTS ================= -->
+<section id="certs">
+  <div class="wrap">
+    <div class="s-head">
+      <span class="hash">##</span>
+      <h2>CERTIFICATIONS</h2><span class="divider"></span><span class="count">apt --list --upgradable</span>
+    </div>
+    <div class="certs">
+      <div class="cert"><span class="st">1</span><div><div class="t">ISC2 Certified in Cybersecurity</div><div class="o">ISC2</div><span class="s busy">IN PROGRESS</span></div></div>
+      <div class="cert"><span class="st">2</span><div><div class="t">Python for Everybody</div><div class="o">University of Michigan · Coursera</div><span class="s done">DONE</span></div></div>
+      <div class="cert"><span class="st">3</span><div><div class="t">Microsoft Security Essentials</div><div class="o">LinkedIn Learning</div><span class="s done">DONE</span></div></div>
+      <div class="cert"><span class="st">4</span><div><div class="t">Ubuntu Pro</div><div class="o">Canonical</div><span class="s done">DONE</span></div></div>
+      <div class="cert"><span class="st">5</span><div><div class="t">OSINT</div><div class="o">Cybrary</div><span class="s busy">IN PROGRESS</span></div></div>
+      <div class="cert"><span class="st">6</span><div><div class="t">UML</div><div class="o">The University of Hong Kong · Coursera</div><span class="s done">DONE</span></div></div>
+    </div>
+  </div>
+</section>
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+  <div class="wrap">
+    <div class="s-head">
+      <span class="hash">##</span>
+      <h2>CONTACT</h2><span class="divider"></span><span class="count">echo $PORTS</span>
+    </div>
+    <div class="contact">
+      <div class="ci"><div class="lab">email</div><div class="val"><a href="mailto:larbi.ouadeih@etu.u-paris.fr">larbi.ouadeih@etu.u-paris.fr</a></div></div>
+      <div class="ci"><div class="lab">linkedin</div><div class="val"><a href="https://linkedin.com/in/larbi-ouadeih" target="_blank" rel="noopener">linkedin.com/in/larbi-ouadeih</a></div></div>
+      <div class="ci"><div class="lab">github</div><div class="val"><a href="https://github.com/larbi01" target="_blank" rel="noopener">github.com/larbi01</a></div></div>
+      <div class="ci"><div class="lab">status</div><div class="val" style="color:var(--accent)">OPEN TO CDI</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="status"><span class="led"></span><span style="color:var(--text-2)">designed &amp; built by Larbi OUADEIH — Vulcanico notturno</span></div>
+    <div class="line"><span style="color:var(--accent)">larbi$</span> uptime &nbsp;—&nbsp; trilingual . edge . networks . security . since 2026</div>
+    <div style="margin-top:14px">© <span id="year"></span> Larbi OUADEIH — built with Geist Mono, CSS &amp; ember.</div>
+  </div>
+</footer>
+
+<script>
+/* ---------- BOOT SEQUENCE (typing) ---------- */
+const boot = document.getElementById('boot');
+const lines=[
+ ['c','vulcanico_notturno v1.0.0 — booting kernel...'],['c','[ OK ] loaded: identity.mod  node: larbi@paris'],
+ ['c','[ OK ] mounted /credentials latency: 12ms'],['k','$'],['w','whoami'],
+ ['g','larbi_ouadeih — Networks & Autonomous Systems (RSA)'],['w','Université Paris Cité + Aix-Marseille + CMA CGM'],
+ ['g','trilingual: fr ar en | skills: 05 groups | projects: 02'],['y','diploma: OK — open to CDI — position: OPEN'],
+ ['k','$'],['w','./run --status'],['c','ready. scroll to explore.']
+];
+let li = 0;
+function bootLine(i){
+  const prev = boot.querySelector('.cursor'); if(prev) prev.remove();
+  const el = document.createElement('div');
+  el.className = 'ln';
+  const cls = lines[i][0];
+  el.innerHTML = (cls==='w'||cls==='y'? '<span class="k">larbi$</span> ' : '') + '<span class="'+cls+'">' + lines[i][1] + '</span> <span class="cursor"></span>';
+  boot.appendChild(el);
+  boot.scrollTop = boot.scrollHeight;
+}
+bootLine(0);
+const t = setInterval(()=>{
+  li++;
+  if(li < lines.length){ bootLine(li); }
+  else { clearInterval(t); const c=boot.querySelector('.cursor'); if(c) c.remove(); }
+}, 240);
+
+/* ---------- SKILLS VIEW TOGGLE (state) ---------- */
+const detail = {
+  'Cybersecurity': 'Threat modeling, OWASP methodology, vulnerability scanning, forensics, OSINT reconnaissance, and OS hardening for Linux & Windows.',
+  'Networking': 'Protocol stack through TCP/UDP, IP planning, layer-2 segmentation, secure tunnels, Cisco routing & switching, NAT, and reactive monitoring.',
+  'Programming': 'Python for network automation, C++ for systems work, version control, CI/CD pipelines, SQL, and shell scripting.',
+  'Systems': 'Linux (Kali/Ubuntu) and Windows Server administration, Active Directory, bash automation, and security hardening.',
+  'Tools': 'Cisco Packet Tracer, Wireshark, Docker containers, WSL, and virtualization for lab environments.'
+};
+const viewTab = document.getElementById('viewTab');
+const box = document.getElementById('skillsBox');
+viewTab.addEventListener('click', e=>{
+  const b = e.target.closest('button'); if(!b) return;
+  viewTab.querySelectorAll('button').forEach(x=>x.classList.toggle('on', x===b));
+  const list = b.dataset.view === 'list';
+  box.className = list ? 'skills list' : 'skills grid';
+  box.querySelectorAll('.skill-group').forEach(grp=>{
+    if(!list){ if(grp.dataset.full) grp.innerHTML = grp.dataset.full; return; }
+    const name = grp.dataset.g, chips = grp.querySelector('.chips');
+    if(!grp.dataset.full) grp.dataset.full = grp.innerHTML;
+    chips.outerHTML = '<div class="chips" style="display:block"><div class="skil-row"><span class="nm">'+name+'</span><span class="ds">'+detail[name]+'</span></div><div style="padding:8px 16px 14px;display:flex;flex-wrap:wrap;gap:8px">'+Array.from(chips.querySelectorAll('.chip')).map(c=>'<span class="chip">'+c.textContent+'</span>').join('')+'</div></div>';
+  });
+});
+
+/* ---------- MOBILE NAV ---------- */
+document.getElementById('navBurger').addEventListener('click', ()=>{
+  document.getElementById('navLinks').classList.toggle('open');
+});
+
+/* ---------- FOOTER YEAR ---------- */
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
