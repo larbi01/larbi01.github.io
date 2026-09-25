@@ -4,69 +4,70 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>larbi$ ~ resume — Larbi OUADEIH</title>
-<!-- Geist Mono (x.ai CDN substitute, full monospace identity) -->
+<meta name="description" content="Larbi OUADEIH — Networks & Autonomous Systems engineer (M.Sc. Université Paris Cité). Edge computing, IoT, cybersecurity, full-stack development. Open to CDI in Paris and beyond.">
+<meta property="og:title" content="Larbi OUADEIH — Networks & Systems Engineer">
+<meta property="og:description" content="M.Sc. Networks & Autonomous Systems (Université Paris Cité). Edge computing, IoT, cybersecurity. Open to CDI.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://larbi01.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23001621'/%3E%3Ctext x='13' y='45' font-family='monospace' font-size='36' font-weight='bold' fill='%23FF4103'%3E$%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Larbi OUADEIH","url":"https://larbi01.github.io/","jobTitle":"Networks & Autonomous Systems Engineer","email":"mailto:larbi.ouadeih@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Paris","addressCountry":"FR"},"alumniOf":[{"@type":"CollegeOrUniversity","name":"Université Paris Cité"},{"@type":"CollegeOrUniversity","name":"Aix-Marseille Université"}],"sameAs":["https://github.com/larbi01","https://www.linkedin.com/in/larbi-ouadeih"],"knowsAbout":["Edge Computing","IoT","Cybersecurity","TCP/IP","Python","Network Automation","SNMP"]}
+</script>
+<!-- Geist Mono (full monospace identity) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ============ TOKENS — Vulcanico notturno ============ */
 :root{
-  --bg:#001621;            /* near-black, deep blue undertone */
-  --bg-2:#00222f;          /* elevated surface */
-  --bg-3:#00303d;          /* hover surface */
-  --accent:#FF4103;        /* ember orange */
-  --accent-dim:#ff41034d;  /* ember @30% for glows */
-  --text:#e8f1f5;          /* bone-white, cool */
-  --text-2:#9fb3bd;        /* secondary */
-  --text-3:#5a707a;        /* muted */
-  --line:rgba(232,241,245,.12);
-  --line-2:rgba(232,241,245,.22);
-  --mono:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono','Courier New',monospace;
+--bg:#001621; /* near-black, deep blue undertone */
+--bg-2:#00222f; /* elevated surface */
+--bg-3:#00303d; /* hover surface */
+--accent:#FF4103; /* ember orange */
+--accent-dim:#ff41034d; /* ember @30% for glows */
+--text:#e8f1f5; /* bone-white, cool */
+--text-2:#9fb3bd; /* secondary */
+--text-3:#5a707a; /* muted */
+--line:rgba(232,241,245,.12);
+--line-2:rgba(232,241,245,.22);
+--mono:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono','Courier New',monospace;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  background:var(--bg);color:var(--text);
-  font-family:var(--mono);
-  font-size:15px;line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-  /* faint scanline / ember glow atmosphere */
-  background-image:
-    radial-gradient(1200px 500px at 70% -80px, var(--accent-dim), transparent 60%),
-    radial-gradient(900px 400px at 10% 20%, #0a2a36 0, transparent 60%);
-  background-attachment:fixed;
-}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;
+/* faint scanline / ember glow atmosphere */
+background-image:
+radial-gradient(1200px 500px at 70% -80px, var(--accent-dim), transparent 60%),
+radial-gradient(900px 400px at 10% 20%, #0a2a36 0, transparent 60%);
+background-attachment:fixed}
 a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent}
 a:hover{color:#ff7a4d;border-bottom-color:var(--accent-dim)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
-
 /* ============ NAV ============ */
-nav{position:sticky;top:0;z-index:50;background:rgba(0,22,33,.86);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
-.nav-in{display:flex;align-items:center;justify-content:space-between;height:56px}
-.nav-brand{font-weight:600;color:var(--text);letter-spacing:.5px}
+nav{position:sticky;top:0;z-index:50;background:rgba(0,22,33,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:56px;position:relative}
+.nav-brand{font-weight:600;color:var(--text);letter-spacing:.5px;border-bottom:none}
 .nav-brand .prompt{color:var(--accent)}
 .nav-links{display:flex;gap:22px;list-style:none}
-.nav-links a{color:var(--text-2);font-size:12.5px;letter-spacing:1px;text-transform:uppercase}
+.nav-links a{color:var(--text-2);font-size:12.5px;letter-spacing:1px;text-transform:uppercase;border-bottom:none}
 .nav-links a:hover{color:var(--text)}
-.nav-burger{display:none;background:none;border:1px solid var(--line-2);color:var(--accent);font-family:var(--mono);font-size:13px;padding:4px 10px;cursor:pointer}
-.nav-links.open{display:flex;flex-direction:column;position:absolute;top:56px;left:0;right:0;background:var(--bg-2);border-bottom:1px solid var(--line);padding:16px 24px;gap:14px}
-
+.nav-burger{display:none;background:none;border:1px solid var(--line-2);color:var(--text);font-family:var(--mono);font-size:16px;padding:4px 10px;cursor:pointer}
 /* ============ TERMINAL FRAME ============ */
 .term{background:var(--bg-2);border:1px solid var(--line);box-shadow:0 0 0 1px rgba(0,22,33,.6),0 24px 60px -30px rgba(0,0,0,.9)}
 .term-bar{display:flex;align-items:center;gap:8px;height:40px;padding:0 14px;border-bottom:1px solid var(--line);background:#00131d}
 .dot{width:10px;height:10px;border-radius:50%;flex:none}
 .dot-1{background:#ff5f56}.dot-2{background:#ffbd2e}.dot-3{background:#27c93f}
 .term-title{margin-left:8px;color:var(--text-3);font-size:11.5px;letter-spacing:1px;flex:1}
-
 /* ============ HERO / BOOT SEQUENCE ============ */
 .hero{padding:64px 0 72px}
 .boot{min-height:300px;padding:26px 26px 30px;font-size:13.5px}
 .boot .ln{white-space:pre-wrap;word-break:break-word}
-.boot .c{color:var(--text-3)}       /* comment / dim */
-.boot .k{color:var(--accent)}       /* keyword */
-.boot .g{color:#39ff83}             /* ok / green reply */
-.boot .y{color:#ffd23f}             /* warn */
-.boot .w{color:var(--text)}         /* bright output */
+.boot .c{color:var(--text-3)} /* comment / dim */
+.boot .k{color:var(--accent)} /* keyword */
+.boot .g{color:#39ff83} /* ok / green reply */
+.boot .y{color:#ffd23f} /* warn */
+.boot .w{color:var(--text)} /* bright output */
 .boot .cursor{display:inline-block;width:9px;height:16px;background:var(--accent);vertical-align:-2px;animation:blink 1.05s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
 .hero h1{margin-top:36px;font-size:clamp(26px,5vw,44px);font-weight:600;color:var(--text);line-height:1.1;letter-spacing:.5px}
@@ -81,7 +82,6 @@ nav{position:sticky;top:0;z-index:50;background:rgba(0,22,33,.86);backdrop-filte
 .btn-solid:hover{background:#ff5c22;border-color:#ff5c22;color:#000}
 .btn-ghost{background:transparent;color:var(--text)}
 .btn-ghost:hover{background:var(--bg-3);color:var(--text)}
-
 /* ============ SECTIONS ============ */
 section{padding:64px 0;border-top:1px solid var(--line)}
 .s-head{display:flex;align-items:center;gap:14px;margin-bottom:30px}
@@ -89,18 +89,32 @@ section{padding:64px 0;border-top:1px solid var(--line)}
 .s-head h2{font-size:20px;font-weight:600;letter-spacing:1px}
 .s-head .divider{flex:1;height:1px;background:var(--line)}
 .s-head .count{color:var(--text-3);font-size:12px}
-
 /* ============ ABOUT + EDUCATION ============ */
 .about-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:26px}
 .card{background:rgba(232,241,245,.03);border:1px solid var(--line);padding:22px}
 .card h3{font-size:14px;letter-spacing:1px;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
 .card p{color:var(--text-2);font-size:14px}
 .card .row{display:flex;gap:10px;margin-bottom:12px;font-size:13px}
+.card .row:last-child{margin-bottom:0}
 .card .row .k{color:var(--text-3);flex:none;width:86px}
 .card .row .v{color:var(--text)}
 .card .row .d{color:var(--accent)}
-.langs{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
-
+.card .row .c{color:var(--text-3);font-size:12px}
+/* ============ EXPERIENCE ============ */
+.exp{border:1px solid var(--line);background:rgba(232,241,245,.02);margin-bottom:18px}
+.exp:last-child{margin-bottom:0}
+.exp-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:12px 18px;border-bottom:1px solid var(--line)}
+.exp-bar .when{color:var(--accent);font-size:12px;letter-spacing:1px}
+.exp-bar .where{color:var(--text-3);font-size:12px;letter-spacing:1px;text-transform:uppercase}
+.exp-body{padding:18px}
+.exp-body h3{font-size:15px;color:var(--text);margin-bottom:4px}
+.exp-body h3 .k{color:var(--accent)}
+.exp-body .org{color:var(--text-2);font-size:13px;margin-bottom:12px}
+.exp-body ul{list-style:none}
+.exp-body li{color:var(--text-2);font-size:13px;margin-bottom:8px;padding-left:18px;position:relative}
+.exp-body li::before{content:"›";color:var(--accent);position:absolute;left:4px}
+.exp-body .stack{margin-top:12px;font-size:11.5px;color:var(--text-3)}
+.exp-body .stack b{color:var(--text-2);font-weight:500}
 /* ============ SKILLS ============ */
 .viewbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;gap:16px;flex-wrap:wrap}
 .viewtab{display:flex;border:1px solid var(--line-2)}
@@ -122,7 +136,6 @@ section{padding:64px 0;border-top:1px solid var(--line)}
 .skil-row .nm{color:var(--accent);font-weight:600;width:200px;flex:none}
 .skil-row .ds{color:var(--text-2);font-size:12.5px;flex:1;min-width:200px}
 .skill-group.hidden{display:none}
-
 /* ============ PROJECTS ============ */
 .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
 .proj{border:1px solid var(--line);background:rgba(232,241,245,.03);display:flex;flex-direction:column;transition:border-color .15s,transform .15s}
@@ -136,7 +149,6 @@ section{padding:64px 0;border-top:1px solid var(--line)}
 .proj .tags{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0}
 .proj .tags span{border:1px solid var(--line-2);font-size:10.5px;letter-spacing:.5px;padding:2px 8px;color:var(--text-2)}
 .proj .plink{font-size:12px;color:var(--accent)}
-
 /* ============ CERTS ============ */
 .certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
 .cert{display:flex;gap:14px;align-items:flex-start;border:1px solid var(--line);background:rgba(232,241,245,.02);padding:16px}
@@ -146,7 +158,6 @@ section{padding:64px 0;border-top:1px solid var(--line)}
 .cert .s{display:inline-block;margin-top:6px;font-size:10px;letter-spacing:1px;text-transform:uppercase;border:1px solid currentColor;padding:2px 7px}
 .cert .s.done{color:#39ff83}
 .cert .s.busy{color:var(--accent);border-style:dashed}
-
 /* ============ CONTACT ============ */
 .contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
 .ci{border:1px solid var(--line);background:rgba(232,241,245,.02);padding:18px}
@@ -154,276 +165,333 @@ section{padding:64px 0;border-top:1px solid var(--line)}
 .ci .val{font-size:14px;word-break:break-all}
 .ci .val a{color:var(--text)}
 .ci .val a:hover{color:var(--accent)}
-
+.copybtn{display:inline-block;margin-top:10px;background:none;border:1px solid var(--line-2);color:var(--text-2);font-family:var(--mono);font-size:10.5px;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;cursor:pointer}
+.copybtn:hover{border-color:var(--accent);color:var(--accent)}
 /* ============ FOOTER ============ */
-footer{border-top:1px solid var(--line);padding:34px 0 46px;color:var(--text-3);font-size:12px}
+footer{padding:44px 0;border-top:1px solid var(--line)}
 footer .status{display:flex;align-items:center;gap:8px;margin-bottom:12px}
-footer .led{width:8px;height:8px;border-radius:50%;background:#39ff83;box-shadow:0 0 8px #39ff83;animation:blink 2.4s ease infinite}
+.led{width:8px;height:8px;border-radius:50%;background:#39ff83;box-shadow:0 0 8px #39ff83;flex:none}
 footer .line{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-
 /* ============ RESPONSIVE ============ */
 @media(max-width:760px){
-  .nav-links{display:none}
-  .nav-burger{display:inline-block}
-  .about-grid{grid-template-columns:1fr}
-  .hero{padding:44px 0}
-  section{padding:44px 0}
-  .skills.grid{grid-template-columns:1fr}
+.nav-links{display:none}
+.nav-links.open{display:flex;position:absolute;top:56px;left:0;right:0;flex-direction:column;background:#00131d;padding:14px 24px;gap:14px;border-bottom:1px solid var(--line)}
+.nav-burger{display:inline-block}
+.about-grid{grid-template-columns:1fr}
+.hero{padding:44px 0}
+section{padding:44px 0}
+.skills.grid{grid-template-columns:1fr}
 }
 @media(max-width:430px){
-  body{font-size:14px}
-  .boot{font-size:12px;padding:18px}
-  .s-head h2{font-size:17px}
+body{font-size:14px}
+.boot{font-size:12px;padding:18px}
+.s-head h2{font-size:17px}
 }
 @media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none!important;transition:none!important}
+*,*::before,*::after{animation:none!important;transition:none!important}
 }
 </style>
 </head>
-<body>
-
-<!-- ================= NAV ================= -->
+<body id="top">
 <nav>
-  <div class="nav-in wrap">
-    <div class="nav-brand"><span class="prompt">larbi$</span> ~/resume</div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#about">./about</a></li>
-      <li><a href="#skills">./skills</a></li>
-      <li><a href="#projects">./projects</a></li>
-      <li><a href="#certs">./certs</a></li>
-      <li><a href="#contact">./contact</a></li>
-    </ul>
-    <button class="nav-burger" id="navBurger" aria-label="menu">MENU</button>
-  </div>
+<div class="wrap nav-in">
+<a class="nav-brand" href="#top"><span class="prompt">larbi$</span> ~</a>
+<button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+<ul class="nav-links" id="navLinks">
+<li><a href="#about">./about</a></li>
+<li><a href="#experience">./experience</a></li>
+<li><a href="#skills">./skills</a></li>
+<li><a href="#projects">./projects</a></li>
+<li><a href="#certs">./certs</a></li>
+<li><a href="#contact">./contact</a></li>
+</ul>
+</div>
 </nav>
 
 <!-- ================= HERO / BOOT ================= -->
-<header class="hero wrap" id="top">
-  <div class="term">
-    <div class="term-bar">
-      <span class="dot dot-1"></span><span class="dot dot-2"></span><span class="dot dot-3"></span>
-      <span class="term-title">larbi@vulcanico: ~/whoami</span>
-    </div>
-    <div class="boot" id="boot" aria-label="terminal startup sequence"></div>
-  </div>
+<header class="hero">
+<div class="wrap">
+<div class="term">
+<div class="term-bar">
+<span class="dot dot-1"></span><span class="dot dot-2"></span><span class="dot dot-3"></span>
+<span class="term-title">larbi@vulcanico: ~/whoami</span>
+</div>
+<div class="boot" id="boot" aria-label="terminal startup sequence"></div>
+</div>
 
-  <h1>LARBI <span class="acc">OUADEIH</span></h1>
-  <p class="role">Master's graduate — <b>Networks &amp; Autonomous Systems (RSA)</b>, Université Paris Cité.<br>
-     Edge Computing · IoT · VANET · UAV/drones · Cybersecurity. Open to CDI opportunities.</p>
-  <div class="meta">
-    <span class="pill acc">TRILINGUAL · FR / AR / EN</span>
-    <span class="pill">EDGE COMPUTING</span>
-    <span class="pill">CYBERSECURITY</span>
-    <span class="pill">NETWORKS</span>
-  </div>
-  <div class="cta">
-    <a class="btn btn-solid" href="#contact">HIRE_ME</a>
-    <a class="btn btn-ghost" href="https://github.com/larbi01" target="_blank" rel="noopener">VIEW_GITHUB</a>
-  </div>
+<h1>LARBI <span class="acc">OUADEIH</span></h1>
+<p class="role">M.Sc. graduate — <b>Networks &amp; Autonomous Systems (RSA)</b>, Université Paris Cité.<br>
+Edge Computing · IoT · 5G · VANET · Cybersecurity · Full-Stack Development. Open to CDI opportunities.</p>
+<div class="meta">
+<span class="pill acc">OPEN TO CDI</span>
+<span class="pill">PARIS · AVAILABLE IMMEDIATELY</span>
+<span class="pill">TRILINGUAL · FR / AR / EN</span>
+<span class="pill">OPEN TO RELOCATE</span>
+</div>
+<div class="cta">
+<a class="btn btn-solid" href="#contact">HIRE_ME</a>
+<a class="btn btn-ghost" href="resources/CV_Larbi_OUADEIH_EN.pdf" target="_blank" rel="noopener">DOWNLOAD_CV</a>
+<a class="btn btn-ghost" href="https://github.com/larbi01" target="_blank" rel="noopener">VIEW_GITHUB</a>
+</div>
+</div>
 </header>
 
 <!-- ================= ABOUT + EDUCATION ================= -->
 <section id="about">
-  <div class="wrap">
-    <div class="s-head">
-      <span class="hash">##</span>
-      <h2>ABOUT</h2><span class="divider"></span><span class="count">whoami.txt</span>
-    </div>
-    <div class="about-grid">
-      <div class="card">
-        <h3># profile</h3>
-        <p>Networks &amp; Autonomous Systems engineer. I build and harden
-        the connected fabric the world runs on — from <span class="k">TCP/IP</span> to
-        <span class="k">UAV</span> swarms and <span class="k">edge</span> deployments.
-        Former IT Project &amp; Support Officer at <b>CMA CGM</b>, where I shipped
-        infrastructure and solved problems at production speed.</p>
-        <div class="langs">
-          <span class="chip" style="color:#39ff83">FR</span>
-          <span class="chip" style="color:#ffd23f">AR</span>
-          <span class="chip" style="color:#ff8a5c">EN</span>
-        </div>
-      </div>
-      <div class="card">
-        <h3>// education</h3>
-        <div class="row"><span class="k">NOW</span><span class="v">Master RSA · <span class="d">Université Paris Cité</span><br><span class="c" style="color:var(--text-3);font-size:12px">Networks &amp; Autonomous Systems — Edge · IoT · VANET · UAV</span></span></div>
-        <div class="row"><span class="k">PREV</span><span class="v">Licence Informatique · <span class="d">Aix-Marseille Université</span></span></div>
-        <div class="row"><span class="k">WORK</span><span class="v">IT Project &amp; Support Officer · <span class="d">CMA CGM</span><br><span class="c" style="color:var(--text-3);font-size:12px">production infrastructure &amp; support</span></span></div>
-      </div>
-    </div>
-  </div>
+<div class="wrap">
+<div class="s-head"><span class="hash">##</span><h2>ABOUT</h2><span class="divider"></span><span class="count">whoami.txt</span></div>
+<div class="about-grid">
+<div class="card">
+<h3># profile</h3>
+<p>Networks &amp; Autonomous Systems engineer. I build and harden
+the connected fabric the world runs on — from <span style="color:var(--accent)">TCP/IP</span> to
+<span style="color:var(--accent)">UAV</span> swarms and <span style="color:var(--accent)">edge</span> deployments.
+Former IT Project &amp; Support Officer at <b>CMA CGM</b>, then Full-Stack Developer intern at <b>SFR</b>,
+where I shipped a real-time SNMP monitoring platform at production speed.</p>
+</div>
+<div class="card">
+<h3>// education</h3>
+<div class="row"><span class="k">M.SC</span><span class="v">Autonomous Networks &amp; Systems (RSA) · <span class="d">Université Paris Cité</span><br><span class="c">2024 – 2026 · Graduated — Edge · IoT · 5G · VANET · Cybersecurity</span></span></div>
+<div class="row"><span class="k">B.SC</span><span class="v">Computer Science · <span class="d">Aix-Marseille Université</span><br><span class="c">2023 – 2024 · Algorithms · C/Unix · Databases</span></span></div>
+<div class="row"><span class="k">B.SC</span><span class="v">Computer Engineering &amp; Networks · <span class="d">EMSI Marrakech</span><br><span class="c">2020 – 2023</span></span></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+<section id="experience">
+<div class="wrap">
+<div class="s-head"><span class="hash">##</span><h2>EXPERIENCE</h2><span class="divider"></span><span class="count">cat ./experience.log</span></div>
+
+<div class="exp">
+<div class="exp-bar"><span class="when">[2026-02 → 2026-08]</span><span class="where">Paris · On-site</span></div>
+<div class="exp-body">
+<h3>Full-Stack Software Developer <span class="k">— Final Year Intern (PFE)</span></h3>
+<div class="org">SFR</div>
+<ul>
+<li>Designed and built a real-time SNMP-based web monitoring tool (PHP, MySQL, HTML/CSS/JS) for electrical measurement units across SFR technical network sites.</li>
+<li>Integrated power consumption / temperature correlation to support energy management decisions.</li>
+<li>Achieved a 50% reduction in time-to-metric and improved incident anticipation for network operations teams.</li>
+<li>Built automated Grafana dashboards aggregating multi-source KPIs (electrical measurements, temperatures, alerts).</li>
+</ul>
+<div class="stack"><b>stack:</b> Linux · PHP · Python · MySQL · HTML/CSS/JS · SNMP v1/v2/v3 · Grafana</div>
+</div>
+</div>
+
+<div class="exp">
+<div class="exp-bar"><span class="when">[2024-04 → 2024-09]</span><span class="where">Marseille · On-site</span></div>
+<div class="exp-body">
+<h3>PMO &amp; Support Officer <span class="k">— New Build Vessels (Intern)</span></h3>
+<div class="org">CMA CGM</div>
+<ul>
+<li>Automated network monitoring and maintenance scripts in Python and Bash, reducing incident resolution time.</li>
+<li>Supervised and coordinated IT infrastructure for 50+ vessels: connectivity, servers, end-user systems.</li>
+<li>Configured and maintained onboard network equipment (switches, routers, VLANs, VPN).</li>
+<li>Managed IT installation projects for newly built vessels, ensuring on-time delivery.</li>
+</ul>
+<div class="stack"><b>stack:</b> Python · Bash · Cisco · VLAN · VPN · IT project coordination</div>
+</div>
+</div>
+
+</div>
 </section>
 
 <!-- ================= SKILLS ================= -->
 <section id="skills">
-  <div class="wrap">
-    <div class="s-head">
-      <span class="hash">##</span>
-      <h2>SKILLS</h2><span class="divider"></span><span class="count">ls ./skills --detail</span>
-    </div>
-    <div class="viewbar">
-      <span style="color:var(--text-3);font-size:12px">05 GROUPS · toggle verbosity</span>
-      <div class="viewtab" id="viewTab" role="group" aria-label="skill view toggle">
-        <button class="on" data-view="grid">GRID</button>
-        <button data-view="list">LIST -d</button>
-      </div>
-    </div>
-    <div class="skills grid" id="skillsBox">
-      <div class="skill-group" data-g="Cybersecurity">
-        <div class="glabel"><span class="num">[01]</span> Cybersecurity</div>
-        <div class="chips"><span class="chip">OWASP Top 10</span><span class="chip">ZAP / Nikto / Wapiti</span><span class="chip">Pentesting basics</span><span class="chip">Log analysis</span><span class="chip">OSINT</span><span class="chip">Linux+Windows hardening</span><span class="chip">Wireshark / tcpdump</span></div>
-      </div>
-      <div class="skill-group" data-g="Networking">
-        <div class="glabel"><span class="num">[02]</span> Networking</div>
-        <div class="chips"><span class="chip">TCP/IP</span><span class="chip">DNS</span><span class="chip">DHCP</span><span class="chip">VLAN</span><span class="chip">VPN</span><span class="chip">Cisco routing/switching</span><span class="chip">NAT</span><span class="chip">monitoring</span></div>
-      </div>
-      <div class="skill-group" data-g="Programming">
-        <div class="glabel"><span class="num">[03]</span> Programming</div>
-        <div class="chips"><span class="chip">Python (network automation)</span><span class="chip">C++</span><span class="chip">Git / GitHub</span><span class="chip">GitHub Actions CI/CD</span><span class="chip">SQL</span><span class="chip">shell</span></div>
-      </div>
-      <div class="skill-group" data-g="Systems">
-        <div class="glabel"><span class="num">[04]</span> Systems</div>
-        <div class="chips"><span class="chip">Linux Kali / Ubuntu</span><span class="chip">Windows Server</span><span class="chip">Active Directory</span><span class="chip">bash</span><span class="chip">hardening</span></div>
-      </div>
-      <div class="skill-group" data-g="Tools">
-        <div class="glabel"><span class="num">[05]</span> Tools</div>
-        <div class="chips"><span class="chip">Packet Tracer</span><span class="chip">Wireshark</span><span class="chip">Docker</span><span class="chip">WSL</span><span class="chip">virtualization</span></div>
-      </div>
-    </div>
-  </div>
+<div class="wrap">
+<div class="s-head"><span class="hash">##</span><h2>SKILLS</h2><span class="divider"></span><span class="count">ls ./skills --detail</span></div>
+<div class="viewbar">
+<span style="color:var(--text-3);font-size:12px">05 GROUPS · toggle verbosity</span>
+<div class="viewtab" id="viewTab" role="group" aria-label="skill view toggle">
+<button class="on" data-view="grid">GRID</button>
+<button data-view="list">LIST -d</button>
+</div>
+</div>
+<div class="skills grid" id="skillsBox">
+<div class="skill-group" data-g="Cybersecurity">
+<div class="glabel"><span class="num">[01]</span> Cybersecurity</div>
+<div class="chips"><span class="chip">OWASP Top 10</span><span class="chip">ZAP / Nikto / Wapiti</span><span class="chip">Pentesting basics</span><span class="chip">Log analysis</span><span class="chip">OSINT</span><span class="chip">Linux+Windows hardening</span><span class="chip">Wireshark / tcpdump</span></div>
+</div>
+<div class="skill-group" data-g="Networking">
+<div class="glabel"><span class="num">[02]</span> Networking</div>
+<div class="chips"><span class="chip">TCP/IP</span><span class="chip">DNS</span><span class="chip">DHCP</span><span class="chip">VLAN</span><span class="chip">VPN</span><span class="chip">Cisco routing/switching</span><span class="chip">NAT</span><span class="chip">SNMP</span><span class="chip">monitoring</span></div>
+</div>
+<div class="skill-group" data-g="Programming">
+<div class="glabel"><span class="num">[03]</span> Programming</div>
+<div class="chips"><span class="chip">Python (network automation)</span><span class="chip">PHP</span><span class="chip">JavaScript</span><span class="chip">C++</span><span class="chip">Git / GitHub</span><span class="chip">GitHub Actions CI/CD</span><span class="chip">SQL</span><span class="chip">shell</span></div>
+</div>
+<div class="skill-group" data-g="Systems">
+<div class="glabel"><span class="num">[04]</span> Systems</div>
+<div class="chips"><span class="chip">Linux Kali / Ubuntu</span><span class="chip">Windows Server</span><span class="chip">Active Directory</span><span class="chip">bash</span><span class="chip">hardening</span></div>
+</div>
+<div class="skill-group" data-g="Tools">
+<div class="glabel"><span class="num">[05]</span> Tools</div>
+<div class="chips"><span class="chip">Packet Tracer</span><span class="chip">Wireshark</span><span class="chip">Docker</span><span class="chip">Grafana</span><span class="chip">WSL</span><span class="chip">virtualization</span></div>
+</div>
+</div>
+</div>
 </section>
 
 <!-- ================= PROJECTS ================= -->
 <section id="projects">
-  <div class="wrap">
-    <div class="s-head">
-      <span class="hash">##</span>
-      <h2>PROJECTS</h2><span class="divider"></span><span class="count">PROJECTS =</span>
-    </div>
-    <div class="projects">
-      <article class="proj">
-        <div class="pbar"><span class="bar">$</span> sftiv/</div>
-        <div class="pbody">
-          <h3>SFTIV <span class="k">— secure file transfer</span></h3>
-          <p>End-to-end encrypted file transfer over TCP. AES-256-GCM for confidentiality,
-             SHA-256 integrity checks, Ed25519 signatures for authenticity. A client/server
-             pair built with clean sockets.</p>
-          <div class="tags"><span>AES-256-GCM</span><span>SHA-256</span><span>Ed25519</span><span>TCP</span></div>
-          <a class="plink" href="https://github.com/larbi01/sftiv" target="_blank" rel="noopener">github.com/larbi01/sftiv &rarr;</a>
-        </div>
-      </article>
-      <article class="proj">
-        <div class="pbar"><span class="bar">$</span> netprobe/</div>
-        <div class="pbody">
-          <h3>NetProbe <span class="k">— network diagnostics</span></h3>
-          <p>Network diagnostic and monitoring toolkit. Runs ping / DNS / TCP reachability
-             tests from a single entry point and emits structured reports for ops teams.</p>
-          <div class="tags"><span>ping</span><span>DNS</span><span>TCP</span><span>reports</span></div>
-          <a class="plink" href="https://github.com/larbi01/netprobe" target="_blank" rel="noopener">github.com/larbi01/netprobe &rarr;</a>
-        </div>
-      </article>
-    </div>
-  </div>
+<div class="wrap">
+<div class="s-head"><span class="hash">##</span><h2>PROJECTS</h2><span class="divider"></span><span class="count">PROJECTS =</span></div>
+<div class="projects">
+<article class="proj">
+<div class="pbar"><span class="bar">$</span> sftiv/</div>
+<div class="pbody">
+<h3>SFTIV <span class="k">— secure file transfer</span></h3>
+<p>End-to-end encrypted file transfer over TCP. AES-256-GCM for confidentiality,
+SHA-256 integrity checks, Ed25519 signatures for authenticity. A client/server
+pair built with clean sockets.</p>
+<div class="tags"><span>AES-256-GCM</span><span>SHA-256</span><span>Ed25519</span><span>TCP</span></div>
+<a class="plink" href="https://github.com/larbi01/sftiv" target="_blank" rel="noopener">github.com/larbi01/sftiv &rarr;</a>
+</div>
+</article>
+<article class="proj">
+<div class="pbar"><span class="bar">$</span> netprobe/</div>
+<div class="pbody">
+<h3>NetProbe <span class="k">— network diagnostics</span></h3>
+<p>Network diagnostic and monitoring toolkit. Runs ping / DNS / TCP reachability
+tests from a single entry point and emits structured reports for ops teams.</p>
+<div class="tags"><span>ping</span><span>DNS</span><span>TCP</span><span>reports</span></div>
+<a class="plink" href="https://github.com/larbi01/netprobe" target="_blank" rel="noopener">github.com/larbi01/netprobe &rarr;</a>
+</div>
+</article>
+<article class="proj">
+<div class="pbar"><span class="bar">$</span> pfa_luxe_drive/</div>
+<div class="pbody">
+<h3>PFA Luxe Drive <span class="k">— car rental web app</span></h3>
+<p>Car rental web application: browse the fleet, book vehicles, manage reservations.
+Full-stack build with authentication and a relational booking model.</p>
+<div class="tags"><span>Python</span><span>Flask</span><span>MySQL</span></div>
+<a class="plink" href="https://github.com/larbi01/PFA_Luxe_Drive" target="_blank" rel="noopener">github.com/larbi01/PFA_Luxe_Drive &rarr;</a>
+</div>
+</article>
+</div>
+</div>
 </section>
 
 <!-- ================= CERTS ================= -->
 <section id="certs">
-  <div class="wrap">
-    <div class="s-head">
-      <span class="hash">##</span>
-      <h2>CERTIFICATIONS</h2><span class="divider"></span><span class="count">apt --list --upgradable</span>
-    </div>
-    <div class="certs">
-      <div class="cert"><span class="st">1</span><div><div class="t">ISC2 Certified in Cybersecurity</div><div class="o">ISC2</div><span class="s busy">IN PROGRESS</span></div></div>
-      <div class="cert"><span class="st">2</span><div><div class="t">Python for Everybody</div><div class="o">University of Michigan · Coursera</div><span class="s done">DONE</span></div></div>
-      <div class="cert"><span class="st">3</span><div><div class="t">Microsoft Security Essentials</div><div class="o">LinkedIn Learning</div><span class="s done">DONE</span></div></div>
-      <div class="cert"><span class="st">4</span><div><div class="t">Ubuntu Pro</div><div class="o">Canonical</div><span class="s done">DONE</span></div></div>
-      <div class="cert"><span class="st">5</span><div><div class="t">OSINT</div><div class="o">Cybrary</div><span class="s busy">IN PROGRESS</span></div></div>
-      <div class="cert"><span class="st">6</span><div><div class="t">UML</div><div class="o">The University of Hong Kong · Coursera</div><span class="s done">DONE</span></div></div>
-    </div>
-  </div>
+<div class="wrap">
+<div class="s-head"><span class="hash">##</span><h2>CERTIFICATIONS</h2><span class="divider"></span><span class="count">apt --list --upgradable</span></div>
+<div class="certs">
+<div class="cert"><span class="st">1</span><div><div class="t">ISC2 Certified in Cybersecurity</div><div class="o">ISC2</div><span class="s busy">IN PROGRESS</span></div></div>
+<div class="cert"><span class="st">2</span><div><div class="t">Python for Everybody</div><div class="o">University of Michigan · Coursera</div><span class="s done">DONE</span></div></div>
+<div class="cert"><span class="st">3</span><div><div class="t">Microsoft Security Essentials</div><div class="o">LinkedIn Learning</div><span class="s done">DONE</span></div></div>
+<div class="cert"><span class="st">4</span><div><div class="t">Ubuntu Pro</div><div class="o">Canonical</div><span class="s done">DONE</span></div></div>
+<div class="cert"><span class="st">5</span><div><div class="t">OSINT</div><div class="o">Cybrary</div><span class="s busy">IN PROGRESS</span></div></div>
+<div class="cert"><span class="st">6</span><div><div class="t">UML</div><div class="o">The University of Hong Kong · Coursera</div><span class="s done">DONE</span></div></div>
+</div>
+</div>
 </section>
 
 <!-- ================= CONTACT ================= -->
 <section id="contact">
-  <div class="wrap">
-    <div class="s-head">
-      <span class="hash">##</span>
-      <h2>CONTACT</h2><span class="divider"></span><span class="count">echo $PORTS</span>
-    </div>
-    <div class="contact">
-      <div class="ci"><div class="lab">email</div><div class="val"><a href="mailto:larbi.ouadeih@etu.u-paris.fr">larbi.ouadeih@etu.u-paris.fr</a></div></div>
-      <div class="ci"><div class="lab">linkedin</div><div class="val"><a href="https://linkedin.com/in/larbi-ouadeih" target="_blank" rel="noopener">linkedin.com/in/larbi-ouadeih</a></div></div>
-      <div class="ci"><div class="lab">github</div><div class="val"><a href="https://github.com/larbi01" target="_blank" rel="noopener">github.com/larbi01</a></div></div>
-      <div class="ci"><div class="lab">status</div><div class="val" style="color:var(--accent)">OPEN TO CDI</div></div>
-    </div>
-  </div>
+<div class="wrap">
+<div class="s-head"><span class="hash">##</span><h2>CONTACT</h2><span class="divider"></span><span class="count">echo $PORTS</span></div>
+<div class="contact">
+<div class="ci"><div class="lab">email</div><div class="val"><a href="mailto:larbi.ouadeih@gmail.com">larbi.ouadeih@gmail.com</a></div><button class="copybtn" id="copyEmail">COPY_EMAIL</button></div>
+<div class="ci"><div class="lab">phone</div><div class="val"><a href="tel:+33749556222">07 49 55 62 22</a></div></div>
+<div class="ci"><div class="lab">linkedin</div><div class="val"><a href="https://www.linkedin.com/in/larbi-ouadeih" target="_blank" rel="noopener">linkedin.com/in/larbi-ouadeih</a></div></div>
+<div class="ci"><div class="lab">github</div><div class="val"><a href="https://github.com/larbi01" target="_blank" rel="noopener">github.com/larbi01</a></div></div>
+<div class="ci"><div class="lab">location</div><div class="val">Île-de-France, France</div></div>
+<div class="ci"><div class="lab">status</div><div class="val" style="color:var(--accent)">OPEN TO CDI</div></div>
+</div>
+</div>
 </section>
 
-<!-- ================= FOOTER ================= -->
 <footer>
-  <div class="wrap">
-    <div class="status"><span class="led"></span><span style="color:var(--text-2)">designed &amp; built by Larbi OUADEIH — Vulcanico notturno</span></div>
-    <div class="line"><span style="color:var(--accent)">larbi$</span> uptime &nbsp;—&nbsp; trilingual . edge . networks . security . since 2026</div>
-    <div style="margin-top:14px">© <span id="year"></span> Larbi OUADEIH — built with Geist Mono, CSS &amp; ember.</div>
-  </div>
+<div class="wrap">
+<div class="status"><span class="led"></span><span style="color:var(--text-2)">designed &amp; built by Larbi OUADEIH — Vulcanico notturno</span></div>
+<div class="line"><span style="color:var(--accent)">larbi$</span> uptime &nbsp;—&nbsp; trilingual . edge . networks . security . full-stack</div>
+<div style="margin-top:14px">© <span id="year"></span> Larbi OUADEIH — built with Geist Mono, CSS &amp; ember.</div>
+</div>
 </footer>
 
 <script>
 /* ---------- BOOT SEQUENCE (typing) ---------- */
 const boot = document.getElementById('boot');
 const lines=[
- ['c','vulcanico_notturno v1.0.0 — booting kernel...'],['c','[ OK ] loaded: identity.mod  node: larbi@paris'],
- ['c','[ OK ] mounted /credentials latency: 12ms'],['k','$'],['w','whoami'],
- ['g','larbi_ouadeih — Networks & Autonomous Systems (RSA)'],['w','Université Paris Cité + Aix-Marseille + CMA CGM'],
- ['g','trilingual: fr ar en | skills: 05 groups | projects: 02'],['y','diploma: OK — open to CDI — position: OPEN'],
- ['k','$'],['w','./run --status'],['c','ready. scroll to explore.']
+['c','vulcanico_notturno v2.0.0 — booting kernel...'],
+['c','[ OK ] loaded: identity.mod node: larbi@paris'],
+['c','[ OK ] mounted /credentials latency: 12ms'],
+['k','$'],['w','whoami'],
+['g','larbi_ouadeih — Networks & Autonomous Systems (RSA)'],
+['w','M.Sc. Université Paris Cité · SFR · CMA CGM'],
+['g','trilingual: fr ar en | skills: 05 groups | projects: 03'],
+['y','diploma: OK — open to CDI — position: OPEN'],
+['k','$'],['w','./run --status'],
+['c','ready. scroll to explore.']
 ];
 let li = 0;
 function bootLine(i){
-  const prev = boot.querySelector('.cursor'); if(prev) prev.remove();
-  const el = document.createElement('div');
-  el.className = 'ln';
-  const cls = lines[i][0];
-  el.innerHTML = (cls==='w'||cls==='y'? '<span class="k">larbi$</span> ' : '') + '<span class="'+cls+'">' + lines[i][1] + '</span> <span class="cursor"></span>';
-  boot.appendChild(el);
-  boot.scrollTop = boot.scrollHeight;
+const prev = boot.querySelector('.cursor'); if(prev) prev.remove();
+const el = document.createElement('div');
+el.className = 'ln';
+const cls = lines[i][0];
+el.innerHTML = (cls==='w'||cls==='y' ? '<span class="k">larbi$</span> ' : '') + '<span class="'+cls+'">' + lines[i][1] + '</span> <span class="cursor"></span>';
+boot.appendChild(el);
+boot.scrollTop = boot.scrollHeight;
 }
 bootLine(0);
 const t = setInterval(()=>{
-  li++;
-  if(li < lines.length){ bootLine(li); }
-  else { clearInterval(t); const c=boot.querySelector('.cursor'); if(c) c.remove(); }
+li++;
+if(li < lines.length){ bootLine(li); }
+else { clearInterval(t); const c=boot.querySelector('.cursor'); if(c) c.remove(); }
 }, 240);
 
 /* ---------- SKILLS VIEW TOGGLE (state) ---------- */
 const detail = {
-  'Cybersecurity': 'Threat modeling, OWASP methodology, vulnerability scanning, forensics, OSINT reconnaissance, and OS hardening for Linux & Windows.',
-  'Networking': 'Protocol stack through TCP/UDP, IP planning, layer-2 segmentation, secure tunnels, Cisco routing & switching, NAT, and reactive monitoring.',
-  'Programming': 'Python for network automation, C++ for systems work, version control, CI/CD pipelines, SQL, and shell scripting.',
-  'Systems': 'Linux (Kali/Ubuntu) and Windows Server administration, Active Directory, bash automation, and security hardening.',
-  'Tools': 'Cisco Packet Tracer, Wireshark, Docker containers, WSL, and virtualization for lab environments.'
+'Cybersecurity': 'Threat modeling, OWASP methodology, vulnerability scanning, forensics, OSINT reconnaissance, and OS hardening for Linux & Windows.',
+'Networking': 'Protocol stack through TCP/UDP, IP planning, layer-2 segmentation, secure tunnels, Cisco routing & switching, NAT, SNMP, and reactive monitoring.',
+'Programming': 'Python for network automation, PHP and JavaScript for full-stack web work, C++ for systems, version control, CI/CD pipelines, SQL, and shell scripting.',
+'Systems': 'Linux (Kali/Ubuntu) and Windows Server administration, Active Directory, bash automation, and security hardening.',
+'Tools': 'Cisco Packet Tracer, Wireshark, Docker containers, Grafana dashboards, WSL, and virtualization for lab environments.'
 };
 const viewTab = document.getElementById('viewTab');
 const box = document.getElementById('skillsBox');
 viewTab.addEventListener('click', e=>{
-  const b = e.target.closest('button'); if(!b) return;
-  viewTab.querySelectorAll('button').forEach(x=>x.classList.toggle('on', x===b));
-  const list = b.dataset.view === 'list';
-  box.className = list ? 'skills list' : 'skills grid';
-  box.querySelectorAll('.skill-group').forEach(grp=>{
-    if(!list){ if(grp.dataset.full) grp.innerHTML = grp.dataset.full; return; }
-    const name = grp.dataset.g, chips = grp.querySelector('.chips');
-    if(!grp.dataset.full) grp.dataset.full = grp.innerHTML;
-    chips.outerHTML = '<div class="chips" style="display:block"><div class="skil-row"><span class="nm">'+name+'</span><span class="ds">'+detail[name]+'</span></div><div style="padding:8px 16px 14px;display:flex;flex-wrap:wrap;gap:8px">'+Array.from(chips.querySelectorAll('.chip')).map(c=>'<span class="chip">'+c.textContent+'</span>').join('')+'</div></div>';
-  });
+const b = e.target.closest('button'); if(!b) return;
+viewTab.querySelectorAll('button').forEach(x=>x.classList.toggle('on', x===b));
+const list = b.dataset.view === 'list';
+box.className = list ? 'skills list' : 'skills grid';
+box.querySelectorAll('.skill-group').forEach(grp=>{
+const name = grp.dataset.g;
+if(!grp.dataset.orig) grp.dataset.orig = grp.innerHTML;
+if(!list){ grp.innerHTML = grp.dataset.orig; return; }
+const chips = grp.querySelector('.chips');
+chips.outerHTML = '<div class="chips" style="display:block"><div class="skil-row"><span class="nm">'+name+'</span><span class="ds">'+detail[name]+'</span></div><div style="padding:8px 16px 14px;display:flex;flex-wrap:wrap;gap:8px">'+Array.from(chips.querySelectorAll('.chip')).map(c=>'<span class="chip">'+c.textContent+'</span>').join('')+'</div></div>';
+});
 });
 
-/* ---------- MOBILE NAV ---------- */
-document.getElementById('navBurger').addEventListener('click', ()=>{
-  document.getElementById('navLinks').classList.toggle('open');
+/* ---------- MOBILE NAV (fixed: toggles .open, now styled) ---------- */
+const navBurger = document.getElementById('navBurger');
+const navLinks = document.getElementById('navLinks');
+navBurger.addEventListener('click', ()=>{
+const open = navLinks.classList.toggle('open');
+navBurger.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{
+navLinks.classList.remove('open');
+navBurger.setAttribute('aria-expanded','false');
+}));
+
+/* ---------- COPY EMAIL ---------- */
+const copyBtn = document.getElementById('copyEmail');
+copyBtn.addEventListener('click', async ()=>{
+const em = 'larbi.ouadeih@gmail.com';
+try{
+await navigator.clipboard.writeText(em);
+copyBtn.textContent = 'COPIED ✓';
+setTimeout(()=>{ copyBtn.textContent = 'COPY_EMAIL'; }, 1600);
+}catch(err){
+copyBtn.textContent = em;
+}
 });
 
-/* ---------- FOOTER YEAR ---------- */
 document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
